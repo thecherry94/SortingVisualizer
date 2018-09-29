@@ -51,7 +51,9 @@ namespace SortingVisualizer.Visual
                     g.FillRectangle(Brushes.White, bar_w * i, _pcb.Height - bar_h, bar_w, bar_h);
             }
 
-            _pcb.Image = _c;
+            _pcb.Invoke(new Action(() => _pcb.Image = _c));
+           
+            g.Dispose();
         }
     }
 }

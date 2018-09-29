@@ -47,8 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithm\BubbleSort.cs" />
+    <Compile Include="Algorithm\Exceptions\InvalidGenericTypeException.cs" />
     <Compile Include="Algorithm\IGeneralSortingAlgorithm.cs" />
     <Compile Include="Algorithm\ISortingAlgorithm.cs" />
+    <Compile Include="Algorithm\MergeSort.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>

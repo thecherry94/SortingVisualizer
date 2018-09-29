@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SortingVisualizer.Algorithm.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace SortingVisualizer.Algorithm
 {
     public class BubbleSort<T> : ISortingAlgorithm<T>
     {
-        private Type[] _accepted_types = new Type[] { typeof(int), typeof(float), typeof(string), };
+        private static readonly Type[] _accepted_types = new Type[] { typeof(int), typeof(float), typeof(string), };
 
         private T[] _data;
         private T _largest;
@@ -19,6 +20,9 @@ namespace SortingVisualizer.Algorithm
 
         public BubbleSort(T[] data, T largest, T smallest)
         {
+            if (!_accepted_types.Contains(typeof(T)))
+                throw new InvalidGenericTypeException(typeof(T), _accepted_types);
+
             _data = data;
             _largest = largest;
             _smallest = smallest;

@@ -35,6 +35,12 @@ namespace SortingVisualizer
             _thr_vis.Start();
         }
 
+        public void Abort()
+        {
+            _thr_algo.Abort();
+            _thr_vis.Abort();
+        }
+
         private void _algo_SortingFinished(object sender, EventArgs e)
         {
             _thr_algo.Abort();

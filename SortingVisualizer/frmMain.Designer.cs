@@ -66,6 +66,7 @@
             this.Controls.Add(this.pcbCanvas);
             this.Name = "frmMain";
             this.Text = "Sorting Visualizer";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pcbCanvas)).EndInit();
             this.ResumeLayout(false);
 

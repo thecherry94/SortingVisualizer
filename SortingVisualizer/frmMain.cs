@@ -24,12 +24,12 @@ namespace SortingVisualizer
             int largest = 0;
             int smallest = 0;
 
-            set = generate_random_set(1, 100, 100, out largest, out smallest);
-
-            IGeneralSortingAlgorithm sort = new BubbleSort<int>(set, largest, smallest);
+            set = generate_random_set(1, 500, 500, out largest, out smallest);
+            
+            IGeneralSortingAlgorithm sort = new MergeSort<int>(set, largest, smallest);
             IVisualizer vis = new BarVisualizer<int>(ref pcbCanvas, ref sort);
 
-            _visual = new SortingVisualization(sort, vis, 1, 30);
+            _visual = new SortingVisualization(sort, vis, 4, 30);
         }
 
         private void pcbCanvas_Click(object sender, EventArgs e)
@@ -60,6 +60,9 @@ namespace SortingVisualizer
             return retval;
         }
 
-        
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }
